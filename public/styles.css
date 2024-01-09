@@ -1,3 +1,17 @@
+/* Root colors */
+:root {
+    --background-color: #d1d3dc; /* Light gray background */
+    --font-color: #333448; /* Dark gray font color */
+    --button-color: #229f39; /* Green button color */
+}
+
+/* General Body Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Navigation Styles */
 .nav-container {
     margin-top: 20px;
@@ -10,20 +24,65 @@
 
 .nav-links a {
     margin-right: 15px;
-    font-weight: bold;
-    color: #333;
+    font-weight: 500;
+    color: #11877e;
 }
 
 .nav-links a:hover {
-    color: #3066BE;
+    color: darken(var(--button-color), 10%); /* Darker green on hover */
 }
 
-/* For tablets */
+/* Button Styles */
+.button, button, input[type="submit"].button, .update-button {
+    background-color: var(--button-color); /* Green buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    display: inline-block; /* Added for vertical alignment */
+    line-height: normal; /* Ensures normal line height */
+    vertical-align: middle; /* Vertically centers the text */
+}
+
+.button:hover, button:hover, input[type="submit"].button:hover, .update-button:hover {
+    background-color: darken(var(--button-color), 10%); /* Darker green on hover */
+}
+
+/* Address Link Styles */
+.property-address, .column-50 a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.property-address:hover, .column-50 a:hover {
+    color: darken(var(--button-color), 10%); /* Darker green on hover */
+}
+
+h1 { /*Header color*/
+    color: #11877e;
+
+}
+
+.container input[type="text"] {
+    border: 1px solid #11877e; /* New frame color */
+
+}
+
+.container input[type="text"]:focus {
+    outline-color: #11877e; /* Change focus outline color */
+
+}
+
+
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    /* Your styles for tablet screens */
+    /* Styles for tablet screens */
 }
 
-/* For mobile phones */
 @media (max-width: 480px) {
-    /* Your styles for mobile screens */
+    /*Styles for mobile screens */
 }
