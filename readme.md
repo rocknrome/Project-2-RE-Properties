@@ -2,9 +2,9 @@
 
 ** Roman Larionov **
 
-** App Name: Neighbourhood properties **
+** App Name: Properties development **
 
-** Description: **
+** Description: This project is a full-stack web application designed for managing property development. Utilizing technologies like Express, MongoDB, and Mongoose, it offers a comprehensive platform for tracking and updating property details. Users can add new properties, edit existing ones, and view a detailed list of properties, including address, owner, and completion status. The application is equipped with an intuitive interface, featuring seamless navigation and interactive forms for data entry. It's an ideal tool for property developers and managers seeking an efficient and organized way to oversee their property portfolios.**
 
 **GitHub URL: https://github.com/rocknrome/Project-2-RE-Properties/tree/master
 
