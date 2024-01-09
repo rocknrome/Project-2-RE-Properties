@@ -7,7 +7,14 @@
         <h1><%= property.address %></h1>
         <p><strong>Owner:</strong> <%= property.owner %></p>
         <p><strong>Status:</strong> <%= property.completed ? 'Completed' : 'In Progress' %></p>
-        <a href="/properties/edit/<%= property._id %>">Edit</a>
+
+        <!-- Edit Link -->
+        <a href="/properties/edit/<%= property._id %>" class="button">Edit</a>
+
+        <!-- Delete Form -->
+        <form action="/properties/<%= property._id %>?_method=DELETE" method="POST" style="display: inline;">
+            <button type="submit" class="button" onclick="return confirm('Are you sure you want to delete this property?');">Delete</button>
+        </form>
     </div>
 </body>
 </html>
