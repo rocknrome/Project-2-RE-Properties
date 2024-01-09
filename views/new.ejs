@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("../views/partials/head.ejs") %>
 <body>
-    <p>This is NEW page</p>
+    <%- include("../views/partials/nav.ejs") %>
+    <div class="container">
+        <h1>Add New Property</h1>
+        <form action="/properties" method="POST" style="margin-top: 20px;">
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" required class="field-long"><br>
+
+            <label for="owner">Owner:</label>
+            <input type="text" name="owner" id="owner" required class="field-long"><br>
+
+            <label for="completed">Completed:</label>
+            <input type="checkbox" name="completed" id="completed" class="field-checkbox"><br>
+
+            <input type="submit" value="Add Property" class="button" style="margin-top: 10px;">
+        </form>
+    </div>
 </body>
 </html>

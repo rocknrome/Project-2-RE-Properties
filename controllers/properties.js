@@ -64,14 +64,17 @@ async function update(req, res) {
 
 async function create(req, res) {
     try {
-        // Create a new property with req.body
+        // If the checkbox is not checked, 'completed' will not be in 'req.body'
+        req.body.completed = req.body.completed ? true : false;
+
         let newProperty = await req.model.Property.create(req.body);
 
         res.redirect("/properties");
     } catch (err) {
-        res.send("Error creating property: " + err.message);
+        res.status(500).send("Error creating property: " + err.message);
     }
 }
+
 
 async function edit(req, res) {
     try {
