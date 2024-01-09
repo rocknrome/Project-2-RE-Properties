@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("../views/partials/head.ejs") %>
 <body>
-    <p>This is SHOW page</p>
+    <%- include("../views/partials/nav.ejs") %>
+    <div class="container">
+        <h1><%= property.address %></h1>
+        <p>Owner: <%= property.owner %></p>
+        <p>Status: <%= property.completedStatus ? 'Completed' : 'In Progress' %></p>
+        <a href="/properties/edit/<%= property._id %>">Edit</a>
+    </div>
 </body>
 </html>
