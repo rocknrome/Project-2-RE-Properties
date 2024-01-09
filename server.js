@@ -34,6 +34,8 @@ app.use(methodOverride("_method")); // Lets us use DELETE PUT HTTP verbs
 app.use("/public", express.static("public")); // serve up our public directory with the url prefix of /public/styles.css
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
+app.use(express.static('public')); //styling file access
+
 
 
 /**

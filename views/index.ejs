@@ -6,15 +6,15 @@
     <div class="container">
         <h1>Property List</h1>
         <% properties.forEach(property => { %>
-            <div class="row">
-                <div class="column">
-                    <a href="/properties/<%= property._id %>"><%= property.address %></a>
+            <div class="row" style="margin-bottom: 10px; border: 1px solid #e1e1e1; padding: 10px;">
+                <div class="column column-50">
+                    <strong><a href="/properties/<%= property._id %>"><%= property.address %></a></strong>
                 </div>
-                <div class="column">
-                    <span>Owner: <%= property.owner %></span>
+                <div class="column column-25">
+                    <strong>Owner:</strong> <%= property.owner %>
                 </div>
-                <div class="column">
-                    <span>Status: <%= property.completedStatus ? 'Completed' : 'In Progress' %></span>
+                <div class="column column-25">
+                    <strong>Status:</strong> <%= property.completedStatus ? 'Completed' : 'In Progress' %>
                 </div>
             </div>
         <% }) %>

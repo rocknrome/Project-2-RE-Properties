@@ -1,0 +1,29 @@
+/* Navigation Styles */
+.nav-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    text-align: center;
+}
+
+.nav-links a {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links a:hover {
+    color: #3066BE;
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+    /* Your styles for tablet screens */
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    /* Your styles for mobile screens */
+}
