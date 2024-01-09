@@ -1,25 +1,28 @@
 # SEAL Project 2
 
-** Roman Larionov **
+## Roman Larionov
 
-** App Name: Properties development **
+## App Name:
+Properties development
 
-** Description: This project is a full-stack web application designed for managing property development. Utilizing technologies like Express, MongoDB, and Mongoose, it offers a comprehensive platform for tracking and updating property details. Users can add new properties, edit existing ones, and view a detailed list of properties, including address, owner, and completion status. The application is equipped with an intuitive interface, featuring seamless navigation and interactive forms for data entry. It's an ideal tool for property developers and managers seeking an efficient and organized way to oversee their property portfolios.**
+## Description:
+This project is a full-stack web application designed for managing property development. Utilizing technologies like Express, MongoDB, and Mongoose, it offers a comprehensive platform for tracking and updating property details. Users can add new properties, edit existing ones, and view a detailed list of properties, including address, owner, and completion status. The application is equipped with an intuitive interface, featuring seamless navigation and interactive forms for data entry. It's an ideal tool for property developers and managers seeking an efficient and organized way to oversee their property portfolios.**
 
-**GitHub URL: https://github.com/rocknrome/Project-2-RE-Properties/tree/master
+## GitHub URL:
+https://github.com/rocknrome/Project-2-RE-Properties/tree/master
 
-** Deployed Website: https://project-2-full-crud-app.onrender.com
+## Deployed Website:
+https://project-2-full-crud-app.onrender.com
 
-** Trello Board link: https://trello.com/invite/b/ZauMLzRa/ATTIa8ec683321bb4ecea4b0224a61c01687AA1271C3/project-2-board
+## Trello Board link:
+https://trello.com/invite/b/ZauMLzRa/ATTIa8ec683321bb4ecea4b0224a61c01687AA1271C3/project-2-board
 
 
 ## List of Node dependencies
-
 Express / Mongoose / dotenv / .env / Morgan / method-override / ejs / nodemon
 
 
 ## Node dependencies (package.json)
-
 bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, mongoose, morgan
 
 
@@ -29,7 +32,6 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, m
 
 
 ## Route Map
-
 | Route Name   | Endpoint               | Method | Description                                                      |
 |--------------|------------------------|--------|------------------------------------------------------------------|
 | Index        | `/`                    | GET    | Renders the main page with a list of all properties.             |
@@ -47,7 +49,6 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, m
 
 
 ## ERD Diagram (Entity Relationship Diagram)
-
 Entity:
 
 Property
