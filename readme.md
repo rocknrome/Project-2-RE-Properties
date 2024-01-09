@@ -2,7 +2,7 @@
 
 ** Roman Larionov **
 
-** App Name: Neighbourhood properties **
+** App Name: Properties development **
 
 ** Description: **
 
