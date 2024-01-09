@@ -12,25 +12,58 @@
 
 ** Trello Board link: https://trello.com/invite/b/ZauMLzRa/ATTIa8ec683321bb4ecea4b0224a61c01687AA1271C3/project-2-board
 
+
 ## List of Node dependencies
+
+Express / Mongoose / dotenv / .env / Morgan / method-override / ejs / nodemon
+
 
 ## Node dependencies (package.json)
 
-## Frontend dependencies (juery, ex, alpine, bootstrap, htmx, etc.)
+bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, mongoose, morgan
+
+
+
+## Frontend dependencies (jquery, ex, alpine, bootstrap, htmx, etc.)
+
+
 
 ## Route Map
 
+| Route Name   | Endpoint               | Method | Description                                                      |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Index        | `/`                    | GET    | Renders the main page with a list of all properties.             |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| New Form     | `/properties/new`      | GET    | Displays a form to add a new property.                           |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Create       | `/properties`          | POST   | Processes the form data and adds a new property to the database. |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Show         | `/properties/:id`      | GET    | Displays detailed information for a specific property.           |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Edit Form    | `/properties/edit/:id` | GET    | Shows a form to edit an existing property.                       |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Update       | `/properties/:id`      | PUT    | Updates a specific property's details in the database.           |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Delete       | `/properties/:id`      | DELETE | Removes a specific property from the database.                   |
+|--------------|------------------------|--------|------------------------------------------------------------------|
+| Seed         | `/seed`                | GET    | Seeds the database with predefined property data.                |
+|--------------|------------------------|--------|------------------------------------------------------------------|
 
-| Route Name | Endpoint | Method | Description |
-|------------|----------|--------|-------------|
-| Index      | /index   | GET    | Renders all properties
 
 
 ## Design Mockups (Desktop + Mobile)
 ** Wireframes **
 
+
 ## ERD Diagram (Entity Relationship Diagram)
 
+Entity:
+
+Property
+- _id: ObjectId
+- address: String
+- owner: String
+- completedStatus: Boolean
 
 
 
