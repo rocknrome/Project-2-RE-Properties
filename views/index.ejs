@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("../views/partials/head.ejs") %>
 <body>
-    <p>THIS IS INDEX PAGE</p>
+    <%- include("../views/partials/nav.ejs") %>
+    <div class="container">
+        <h1>Property List</h1>
+        <% properties.forEach(property => { %>
+            <div class="row">
+                <div class="column">
+                    <a href="/properties/<%= property._id %>"><%= property.address %></a>
+                </div>
+                <div class="column">
+                    <span>Owner: <%= property.owner %></span>
+                </div>
+                <div class="column">
+                    <span>Status: <%= property.completedStatus ? 'Completed' : 'In Progress' %></span>
+                </div>
+            </div>
+        <% }) %>
+    </div>
 </body>
 </html>
