@@ -33,22 +33,13 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, m
 | Route Name   | Endpoint               | Method | Description                                                      |
 |--------------|------------------------|--------|------------------------------------------------------------------|
 | Index        | `/`                    | GET    | Renders the main page with a list of all properties.             |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | New Form     | `/properties/new`      | GET    | Displays a form to add a new property.                           |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | Create       | `/properties`          | POST   | Processes the form data and adds a new property to the database. |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | Show         | `/properties/:id`      | GET    | Displays detailed information for a specific property.           |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | Edit Form    | `/properties/edit/:id` | GET    | Shows a form to edit an existing property.                       |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | Update       | `/properties/:id`      | PUT    | Updates a specific property's details in the database.           |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | Delete       | `/properties/:id`      | DELETE | Removes a specific property from the database.                   |
-|--------------|------------------------|--------|------------------------------------------------------------------|
 | Seed         | `/seed`                | GET    | Seeds the database with predefined property data.                |
-|--------------|------------------------|--------|------------------------------------------------------------------|
-
 
 
 ## Design Mockups (Desktop + Mobile)
