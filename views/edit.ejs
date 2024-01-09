@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("../views/partials/head.ejs") %>
 <body>
-    <p>This is EDIT page</p>
+    <%- include("../views/partials/nav.ejs") %>
+    <div class="container">
+        <h1>Edit Property</h1>
+        <form action="/properties/<%= property._id %>?_method=PUT" method="POST">
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" value="<%= property.address %>" required><br>
+
+            <label for="owner">Owner:</label>
+            <input type="text" name="owner" id="owner" value="<%= property.owner %>" required><br>
+
+            <label for="completed">Completed:</label>
+            <input type="checkbox" name="completed" id="completed" <%= property.completed ? 'checked' : '' %>><br>
+
+            <input type="submit" value="Update Property" class="button">
+        </form>
+    </div>
 </body>
 </html>

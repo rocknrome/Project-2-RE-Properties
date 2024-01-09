@@ -42,7 +42,10 @@ async function destroy(req, res) {
 
 async function update(req, res) {
     try {
-        // Find by id and update with the req.body
+        // Convert 'completed' checkbox value to boolean
+        // If the checkbox is unchecked, it won't be included in the req.body
+        req.body.completed = req.body.completed ? true : false;
+
         let updatedProperty = await req.model.Property.findByIdAndUpdate(
             req.params.id,
             req.body,
@@ -55,6 +58,9 @@ async function update(req, res) {
         res.status(500).send("Error updating property: " + error.message);
     }
 }
+
+
+
 
 async function create(req, res) {
     try {
@@ -94,11 +100,20 @@ async function seed(req, res) {
 }
 
 async function show(req, res) {
-    // Find a property by _id
-    let foundProperty = await req.model.Property.findById(req.params.id);
+    try {
+        let foundProperty = await req.model.Property.findById(req.params.id);
 
-    // Render show.ejs with the foundProperty
-    res.render("show.ejs", {
-        property: foundProperty
-    });
+        // Set headers to prevent caching
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
+
+        res.render("show.ejs", {
+            property: foundProperty
+        });
+    } catch (error) {
+        res.status(500).send("Error: " + error.message);
+    }
 }
+
+

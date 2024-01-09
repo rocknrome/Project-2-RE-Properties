@@ -6,7 +6,7 @@
     <div class="container">
         <h1><%= property.address %></h1>
         <p><strong>Owner:</strong> <%= property.owner %></p>
-        <p><strong>Status:</strong> <%= property.completedStatus ? 'Completed' : 'In Progress' %></p>
+        <p><strong>Status:</strong> <%= property.completed ? 'Completed' : 'In Progress' %></p>
         <a href="/properties/edit/<%= property._id %>">Edit</a>
     </div>
 </body>
