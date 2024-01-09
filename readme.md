@@ -45,7 +45,23 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, m
 
 
 ## Design Mockups (Desktop + Mobile)
-** Wireframes **
+![Alt text](<Wireframes/Index page.png>)
+
+![Alt text](<Wireframes/Show page.png>)
+
+![Alt text](<Wireframes/Edit page.png>)
+
+![Alt text](<Wireframes/New page.png>)
+
+
+## Screenshots
+![Alt text](<Screenshots/Index page.png>)
+
+![Alt text](<Screenshots/Show page.png>)
+
+![Alt text](<Screenshots/Edit page.png>)
+
+![Alt text](<Screenshots/New page.png>)
 
 
 ## ERD Diagram (Entity Relationship Diagram)
