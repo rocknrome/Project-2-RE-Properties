@@ -24,10 +24,12 @@ async function index(req, res) {
     });
 }
 
-async function newForm(req, res) {
-    // Render the create form for property
-    res.render("new.ejs");
+
+async function newForm(req, res) { //removing 'Add a property' button from nav while on this 'new' page
+    // Render the create form for property with an additional variable
+    res.render("new.ejs", { onNewPage: true });
 }
+
 
 async function destroy(req, res) {
     try {
