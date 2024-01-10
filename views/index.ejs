@@ -3,6 +3,13 @@
     <%- include("../views/partials/head.ejs") %>
 <body>
     <%- include("../views/partials/nav.ejs") %>
+
+    <!--Function that exports into CSV-->
+    <script src="/./utils/export.js"></script>
+
+    <!--Function that exports into PDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
     <div class="container">
         <h1>Property List</h1>
         <% properties.forEach(property => { %>
@@ -19,9 +26,9 @@
             </div>
         <% }) %>
         <div style="text-align: right; margin-bottom: 10px;">
-            <button id="exportButton" onclick="exportProperties()">Export Properties</button>
+            <button id="exportButton" onclick="exportProperties()">Export to CSV</button>
+            <button onclick="exportPropertiesToPDF()">Export to PDF</button>
         </div>
-
     </div>
 </body>
 </html>

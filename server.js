@@ -35,6 +35,7 @@ app.use("/public", express.static("public")); // serve up our public directory w
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.static('public')); //styling file access
+app.use('/utils', express.static('utils')); //usage of exporting function into CSV and PDF
 
 
 
