@@ -48,7 +48,7 @@ body {
 }
 
 .button:hover, button:hover, input[type="submit"].button:hover, .update-button:hover {
-    background-color: darken(var(--button-color), 30%); /* Darker green on hover */
+    background-color: #11877e;
 }
 
 /* Address Link Styles */
