@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("../views/partials/head.ejs") %>
+    <style>
+        .row {
+            cursor: pointer;
+        }
+    </style>
 <body>
     <%- include("../views/partials/nav.ejs") %>
 
     <!--Function that exports into CSV-->
-    <script src="/./utils/export.js"></script>
+    <script src="../utils/export.js"></script>
 
     <!--Function that exports into PDF-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
@@ -13,9 +18,9 @@
     <div class="container">
         <h1>Property List</h1>
         <% properties.forEach(property => { %>
-            <div class="row" style="margin-bottom: 10px; border: 1px solid #e1e1e1; padding: 10px;">
+            <div class="row" style="margin-bottom: 10px; border: 1px solid #e1e1e1; padding: 10px;" data-href="/properties/<%= property._id %>">
                 <div class="column column-50">
-                    <strong><a href="/properties/<%= property._id %>"><%= property.address %></a></strong>
+                    <strong><%= property.address %></strong>
                 </div>
                 <div class="column column-25">
                     <strong>Owner:</strong> <%= property.owner %>
@@ -30,5 +35,16 @@
             <button onclick="exportPropertiesToPDF()">Export to PDF</button>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const rows = document.querySelectorAll('.row');
+            rows.forEach(row => {
+                row.addEventListener('click', function () {
+                    window.location.href = this.getAttribute('data-href');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
