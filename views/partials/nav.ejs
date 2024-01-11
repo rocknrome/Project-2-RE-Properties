@@ -1,6 +1,10 @@
 <nav class="nav-container">
     <div class="nav-links">
-        <a href="/properties" class="nav-link">Property List</a>
-        <a href="/properties/new" class="nav-link">Add a Property</a>
+        <% if (currentPage !== 'index') { %>
+            <a href="/properties" class="nav-link">Property List</a>
+        <% } %>
+        <% if (currentPage !== 'new') { %>
+            <a href="/properties/new" class="nav-link">Add a Property</a>
+        <% } %>
     </div>
 </nav>

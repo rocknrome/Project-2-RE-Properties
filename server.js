@@ -8,6 +8,7 @@ const morgan = require("morgan"); // logger
 const methodOverride = require("method-override");
 const propertyRouter = require("./routes/properties"); // Importing property routes
 
+
 const app = express();
 const { PORT = 3013 } = process.env;
 const seedData = require("./models/seed"); // Update seed data to property-specific
@@ -39,6 +40,7 @@ app.use('/utils', express.static('utils')); //usage of exporting function into C
 
 
 
+
 /**
  * Routes & Router
  */
@@ -47,11 +49,15 @@ app.use('/utils', express.static('utils')); //usage of exporting function into C
 app.get('/', async (req, res) => {
     try {
         const properties = await req.model.Property.find({});
-        res.render('index', { properties });
+        res.render('index', {
+            properties,
+            currentPage: 'index' // Include the currentPage variable
+        });
     } catch (error) {
         res.status(500).send('Error occurred: ' + error.message);
     }
 });
+
 
 // Seeding Route
 app.get('/seed', async (req, res) => {
@@ -63,7 +69,7 @@ app.get('/seed', async (req, res) => {
         await Property.create(seedData);
 
         // Send a response or redirect
-        res.send('Database has been seeded!');
+        res.send('Hooray! The database has been seeded!');
     } catch (error) {
         res.status(500).send('Error occurred during seeding: ' + error.message);
     }

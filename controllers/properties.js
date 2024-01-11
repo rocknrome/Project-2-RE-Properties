@@ -14,63 +14,62 @@ module.exports = {
  * Route Controllers
  */
 
+// Find all of the properties and render to index.ejs
 async function index(req, res) {
-    // Find all of the properties
     let properties = await req.model.Property.find({});
-
-    // Render all of the properties to index.ejs
     res.render("index.ejs", {
-        properties: properties.reverse()
+        properties: properties.reverse(),
+        currentPage: 'index' // Added to hide redundant navigation link on index page
     });
 }
 
 
-async function newForm(req, res) { //removing 'Add a property' button from nav while on this 'new' page
-    // Render the create form for property with an additional variable
-    res.render("new.ejs", { onNewPage: true });
+// Find a property by ID and render the edit page
+async function edit(req, res) {
+    try {
+        let foundProperty = await req.model.Property.findById(req.params.id);
+        res.render("edit.ejs", {
+            property: foundProperty,
+            currentPage: 'edit'
+        });
+    } catch (error) {
+        res.send("Error during editing");
+    }
 }
 
+// Render the create form for property
+async function newForm(req, res) {
+    res.render("new.ejs", {
+        currentPage: 'new' // Added to hide redundant navigation link on new page
+    });
+}
 
+// Find a property by ID and delete it
 async function destroy(req, res) {
     try {
-        // Find a property and then delete
-        let deletedProperty = await req.model.Property.findByIdAndDelete(req.params.id);
-        // Redirect back to the index
+        await req.model.Property.findByIdAndDelete(req.params.id);
         res.redirect("/properties");
     } catch (error) {
         res.status(500).send("something went wrong when deleting");
     }
 }
 
+// Find a property by ID and update it
 async function update(req, res) {
     try {
-        // Convert 'completed' checkbox value to boolean
-        // If the checkbox is unchecked, it won't be included in the req.body
         req.body.completed = req.body.completed ? true : false;
-
-        let updatedProperty = await req.model.Property.findByIdAndUpdate(
-            req.params.id,
-            req.body,
-            { new: true }
-        );
-
-        // Redirect to the show route with the updated property
+        let updatedProperty = await req.model.Property.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.redirect(`/properties/${updatedProperty._id}`);
     } catch (error) {
         res.status(500).send("Error updating property: " + error.message);
     }
 }
 
-
-
-
+// Create a new property
 async function create(req, res) {
     try {
-        // If the checkbox is not checked, 'completed' will not be in 'req.body'
         req.body.completed = req.body.completed ? true : false;
-
-        let newProperty = await req.model.Property.create(req.body);
-
+        await req.model.Property.create(req.body);
         res.redirect("/properties");
     } catch (err) {
         res.status(500).send("Error creating property: " + err.message);
@@ -78,32 +77,19 @@ async function create(req, res) {
 }
 
 
-async function edit(req, res) {
-    try {
-        // Find the property to edit
-        let foundProperty = await req.model.Property.findById(req.params.id);
-        res.render("edit.ejs", {
-            property: foundProperty
-        });
-    } catch (error) {
-        res.send("Error during editing");
-    }
-}
-
+// Seed the database with initial data
 async function seed(req, res) {
     try {
-        // Delete everything in the database
         await req.model.Property.deleteMany({});
-        // Create data in the database
         await req.model.Property.create(req.model.seedData);
-
-        // Redirect back to the index
-        res.redirect("/properties");
+        res.redirect("/properties"); // This should invoke the index function
     } catch (error) {
         res.send("Something went wrong with your seeds");
     }
 }
 
+
+// Find a property by ID and render its details
 async function show(req, res) {
     try {
         let foundProperty = await req.model.Property.findById(req.params.id);
@@ -114,11 +100,10 @@ async function show(req, res) {
         res.setHeader('Expires', '0');
 
         res.render("show.ejs", {
-            property: foundProperty
+            property: foundProperty,
+            currentPage: 'show'
         });
     } catch (error) {
         res.status(500).send("Error: " + error.message);
     }
 }
-
-
