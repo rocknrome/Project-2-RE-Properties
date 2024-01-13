@@ -5,6 +5,7 @@ module.exports = {
     destroy,
     update,
     create,
+    createAndNew,
     edit,
     show,
     seed
@@ -71,6 +72,17 @@ async function create(req, res) {
         req.body.completed = req.body.completed ? true : false;
         await req.model.Property.create(req.body);
         res.redirect("/properties");
+    } catch (err) {
+        res.status(500).send("Error creating property: " + err.message);
+    }
+}
+
+// Create a new property and redirect to new page
+async function createAndNew(req, res) {
+    try {
+        req.body.completed = req.body.completed ? true : false;
+        await req.model.Property.create(req.body);
+        res.redirect("/properties/new"); // Redirect back to the new property form
     } catch (err) {
         res.status(500).send("Error creating property: " + err.message);
     }

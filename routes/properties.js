@@ -13,6 +13,7 @@ router.get("/new", propertyController.newForm);
 router.delete("/:id", propertyController.destroy);
 router.put("/:id", propertyController.update);
 router.post("/", propertyController.create);
+router.post("/createAndNew", propertyController.createAndNew); // New route for "Add and Next" functionality
 router.get("/edit/:id", propertyController.edit);
 router.get("/seed", propertyController.seed);
 router.get("/:id", propertyController.show);

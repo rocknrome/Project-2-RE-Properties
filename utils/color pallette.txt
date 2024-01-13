@@ -1,0 +1,3 @@
+background: #d0d3da
+font color: #333448
+buttons color: #229f39
