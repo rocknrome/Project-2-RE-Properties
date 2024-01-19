@@ -12,7 +12,7 @@ This project is a full-stack web application designed for managing property deve
 https://github.com/rocknrome/Project-2-RE-Properties/tree/master
 
 ## Deployed Website:
-https://project-2-full-crud-app.onrender.com
+https://properties-full-crud-v2.onrender.com/properties
 
 ## Trello Board link:
 https://trello.com/invite/b/ZauMLzRa/ATTIa8ec683321bb4ecea4b0224a61c01687AA1271C3/project-2-board
