@@ -37,6 +37,7 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-session, method-override, m
 | Index        | `/`                    | GET    | Renders the main page with a list of all properties.             |
 | New Form     | `/properties/new`      | GET    | Displays a form to add a new property.                           |
 | Create       | `/properties`          | POST   | Processes the form data and adds a new property to the database. |
+| Create & New | `/properties/new`      | POST   | Processes new data for one property after another, continuously. |
 | Show         | `/properties/:id`      | GET    | Displays detailed information for a specific property.           |
 | Edit Form    | `/properties/edit/:id` | GET    | Shows a form to edit an existing property.                       |
 | Update       | `/properties/:id`      | PUT    | Updates a specific property's details in the database.           |
